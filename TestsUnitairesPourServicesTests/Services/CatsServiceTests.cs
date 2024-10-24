@@ -133,7 +133,7 @@ namespace TestsUnitairesPourServices.Services.Tests
             var maisonPropre = db.House.Find(CLEAN_HOUSE_ID);
             var maisonSale = db.House.Find(DIRTY_HOUSE_ID);
 
-            //
+            //Les maisons sont inversées
             Exception e = Assert.ThrowsException<DontStealMyCatException>(() => catsService.Move(CAT_IN_DIRTY_HOUSE_ID, maisonPropre, maisonSale));
             Assert.AreEqual("Touche pas à mon chat!", e.Message);
         }
